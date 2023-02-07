@@ -118,26 +118,24 @@ const totalSpent = 2000; //Общая сумма потраченного
 let payment = 500; //Сумма текущего платежа
 let discount = 0; //Скидка
 
-//Если потрачено от 100 до 1000
+//let num = prompt("введите сумма текущего платежа");
+
 if (totalSpent > 100 && totalSpent < 1000) {
-  const discount = 2;
-  console.log(`Оформляем заказ на сумму ${totalSpent} со скидкой ${discount}%`);
-  console.log("Бронзовый партнер, скидка 2%");
-}
-//Если потрачено от 1000 до 5000
-else if (totalSpent > 1000 && totalSpent < 5000) {
+  let discount = 2;
+  const discounts = discount / 100;
+  let res = totalSpent - totalSpent * discounts;
+  console.log(`Оформляем заказ на сумму ${res} со скидкой ${discount}%`);
+} else if (totalSpent > 1000 && totalSpent < 5000) {
   const discount = 5;
-  console.log(`Оформляем заказ на сумму ${totalSpent} со скидкой ${discount}%`);
-  console.log("Серебрянный партнер, скидка 5%");
-}
-//Если потрачено больше 5000
-else if (totalSpent > 5000) {
-  const discount = 10;
-  console.log(`Оформляем заказ на сумму ${totalSpent} со скидкой ${discount}%`);
-  console.log("Золотой партнер, скидка 10%");
-}
-//Если потрачено меньше 100
-else {
+  const discounts = discount / 100;
+  let res = totalSpent - totalSpent * discounts;
+  console.log(`Оформляем заказ на сумму ${res} со скидкой ${discount}%`);
+} else if (totalSpent >= 5000) {
+  let discount = 10;
+  const discounts = discount / 100;
+  let res = totalSpent - totalSpent * discounts;
+  console.log(`Оформляем заказ на сумму ${res} со скидкой ${discount}%`);
+} else {
   totalSpent < 100;
   console.log("У вас еще нет партнерской скидки. Операція завершилась");
 }
